@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Stock Enquiry</title>
+    </head>
+    <body>
+        <div class="fixed">
+            <div class="myDiv">
+                <h2>Welcome to stock flask app</h2>
+                <h4>input stock code here:</h4>
+                <form action="/stock" method="post">
+                    <input type="text" name="stock code" id="stock code">
+                    <button type="submit" class="mybutton">Submit</button>
+                </form>
+                <form method="POST">
+                    <h3><input type="date" name="start date" id="start date"> &rarr; {{date}}</h3>
+                    <input type="hidden" name="code" value="{{code}}">
+                    <button type="submit" class="mybutton" formaction="/stock-price">Stock Price</button>
+                    <button type="submit" class="mybutton" formaction="/indicators">indicators</button>
+                </form>
+                <form action="/forecast" method="POST">
+                    <input type="date" name="date" id="date">
+                    <input type="hidden" name="code" value="{{code}}">
+                    <button type="submit" class="mybutton">Forecast</button>
+                    <h4>Forecasts minimum 15 days ahead</h4>
+                </form>
+                <style type="text/css">
+                    h2 {font-style: italic; color: red;}
+                    h4 {font-style: italic; color:green;}
+                    h1 {font-style: italic; color:black;}
+                </style>
+                <style>
+                    .myButton {
+                        box-shadow: 0px 6px 9px -3px #3dc21b;
+                        background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+                        background-color:#44c767;
+                        border-radius:10px;
+                        display:inline-block;
+                        cursor:pointer;
+                        color:#ffffff;
+                        font-family:Arial;
+                        font: size 5px;
+                        font-weight:bold;
+                        padding:8px 16px;
+                        text-decoration:none;
+                        text-shadow:0px 1px 0px #2f6627;
+                    }
+                    .myButton:hover {
+                        background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+                        background-color:#5cbf2a;
+                    }
+                    .myButton:active {
+                        position:relative;
+                        top:1px;
+                    }
+                </style>
+                <style>
+                    div.fixed {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 300px;
+                    }
+                    div.season{
+                        position: fixed;
+                        top: 0;
+                        right: 0;
+                        width: 1240px;
+                    }
+                </style>
+            </div>
+        </div>
+        <div class="season">
+            <div class="yourDiv">
+                <h1>Company Details here</h1>
+                <center>
+                    <img src="{{logo}}" alt="logo" height="50px" width="50px">
+                    <h1>{{name}}</h1>
+                    <h2>Stock code: {{code}}</h2>
+                    <h4>{{summery}}</h4>
+                </center>
+            </div>
+        </div>
+        <style>
+            .myDiv {
+              border: 5px outset white;
+              background-color: lightcyan;
+            }
+            .yourDiv {
+              border: 5px outset white;
+              background-color: lightcyan;
+            }
+        </style>
+    </body>
+</html>
