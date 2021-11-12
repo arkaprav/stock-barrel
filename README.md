@@ -1,1 +1,2 @@
 # Stock
+In this project, the program fetches data of last two months of stock prices and the company details from online by taking the stock code from the user and depending upon that data it predicts the stock price on a given date. It also plots the stock price and indicators in between two given dates. For my model it seems that Support Vector Regression works well, but it will be better if anyone tries this problem with LSTM rnn model. The project is to make a site capable of predicting the stock prices.
